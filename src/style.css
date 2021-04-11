@@ -1,7 +1,39 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
 h1 {
   color: blue;
+  text-align: center;
+  font-size: 40px;
 }
 
 p {
   color: blue;
+}
+
+form {
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 20px;
+  margin: 40px;
+}
+
+.contrainer {
+  width: 100%;
+  padding: 30px 40px;
+}
+
+.search_city {
+  position: relative;
+  padding: 20px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.temperature {
+  font-size: 30px;
 }
