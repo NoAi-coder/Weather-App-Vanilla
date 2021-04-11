@@ -3,14 +3,21 @@ body {
 }
 
 h1 {
-  color: blue;
+  color: #fff;
   text-align: center;
   font-size: 40px;
 }
 
-p {
-  color: blue;
+h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
 }
+
+h3 {
+  text-align: center;
+}
+
 
 form {
   margin: 0 auto;
@@ -19,9 +26,15 @@ form {
 ul {
   list-style: none;
   padding: 20px;
-  margin: 40px;
+  margin: 15px;
+  color: #fff;
 }
 
+.card {
+background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+padding: 40px;
+  );
+}
 .contrainer {
   width: 100%;
   padding: 30px 40px;
@@ -33,7 +46,7 @@ ul {
   margin: 0 auto;
   width: 300px;
 }
-
-.temperature {
-  font-size: 30px;
+.weather-icon {
+  font-size: 60px;
 }
+
