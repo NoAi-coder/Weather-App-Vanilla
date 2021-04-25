@@ -30,6 +30,12 @@ ul {
   color: #fff;
 }
 
+button {
+  background-color: #ffc93c;
+  border-color: #ffc93c;
+  color: #fff;
+
+}
 .card {
 background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
 padding: 40px;
@@ -48,5 +54,11 @@ padding: 40px;
 }
 .weather-icon {
   font-size: 60px;
+}
+
+.unit{
+position: relative;
+  font-size: 14px;
+  top: -10px;
 }
 
