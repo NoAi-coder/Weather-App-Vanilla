@@ -38,8 +38,16 @@ function showWeather(reponse) {
   humidityElement.innerHTML = reponse.data.main.humidity;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = reponse.data.wind.speed;
+  //weather icon - not working
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "27ddfc7325668fadfd863bab705e25e8";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=stockholm&units=metric&appid=${apiKey}`;
+let city = "uppsala";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 axios.get(apiUrl).then(showWeather);

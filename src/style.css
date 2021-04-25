@@ -14,9 +14,6 @@ h2 {
   font-size: 40px;
 }
 
-h3 {
-  text-align: center;
-}
 
 
 form {
@@ -55,6 +52,7 @@ padding: 40px;
   width: 300px;
 }
 .weather-icon {
+  text-align: center;
   font-size: 60px;
 }
 
