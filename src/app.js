@@ -47,7 +47,20 @@ function showWeather(reponse) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "27ddfc7325668fadfd863bab705e25e8";
-let city = "uppsala";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-axios.get(apiUrl).then(showWeather);
+//Search city function when clicking button
+function search(city) {
+  let apiKey = "27ddfc7325668fadfd863bab705e25e8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function submitSearch(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  search(searchInputElement.value);
+}
+
+search("Stockholm");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitSearch);

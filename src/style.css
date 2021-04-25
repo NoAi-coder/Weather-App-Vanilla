@@ -29,12 +29,7 @@ ul {
 
 }
 
-button {
-  background-color: #ffc93c;
-  border-color: #ffc93c;
-  color: #fff;
 
-}
 .card {
 background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
 padding: 40px;
@@ -45,7 +40,7 @@ padding: 40px;
   padding: 30px 40px;
 }
 
-.search_city {
+.search_form {
   position: relative;
   padding: 20px;
   margin: 0 auto;
@@ -60,4 +55,10 @@ padding: 40px;
 position: relative;
   font-size: 14px;
   top: -10px;
+}
+
+.btn-primary  {
+  background-color: #ffc93c;
+  border-color: #ffc93c;
+  color: #fff;
 }
