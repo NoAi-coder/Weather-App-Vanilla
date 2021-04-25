@@ -14,10 +14,16 @@ h2 {
   font-size: 40px;
 }
 
-
-
 form {
   margin: 0 auto;
+}
+
+button {
+  padding: 5px;
+border-radius: 10px;
+  background-color: #ffc93c;
+  border-color: #ffc93c;
+  color: #fff;
 }
 
 ul {
@@ -28,7 +34,6 @@ ul {
   text-transform: capitalize;
 
 }
-
 
 .card {
 background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
@@ -53,18 +58,14 @@ padding: 40px;
 
 .units{
 position: relative;
+color: white;
   font-size: 14px;
   top: -10px;
 }
 
-.btn-primary  {
-  background-color: #ffc93c;
-  border-color: #ffc93c;
-  color: #fff;
-}
 
 .units .active{
-color: white;
+color: #fff;
 text-decoration: none;
 
 }
