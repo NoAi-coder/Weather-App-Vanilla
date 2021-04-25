@@ -16,11 +16,12 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="contrainer">
       <div class="card">
-        <form class="search_city">
+        <form id="search-city">
           <input
             type="text"
             placeholder="Search other city"
@@ -31,8 +32,8 @@
         <div class="weatherInfo">
           <div class="row">
             <div class="col-6">
-              <h1>Stockholm</h1>
-              <h2><span class="temperature">17 </span><span class="unit unitC">°C</span><span class="unit"> | </span><span class="unit unitF">°F</span></h2>
+              <h1 id="city">Stockholm</h1>
+              <h2><span id="temp">17 </span><span class="unit" id="unitC">°C</span><span class="unit"> | </span><span class="unit" id="unitF">°F</span></h2>
               <h3><span class="weather-icon">☀️</span></h3>
           
             </div>
