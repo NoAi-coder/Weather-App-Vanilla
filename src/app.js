@@ -29,14 +29,17 @@ getCurrentTime();
 //Dsiplay current weather info
 function showWeather(reponse) {
   let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(reponse.data.main.temp);
   let cityElement = document.querySelector("h1");
-  cityElement.innerHTML = reponse.data.name;
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = reponse.data.weather[0].description;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = reponse.data.main.humidity;
   let windElement = document.querySelector("#wind");
+
+  celsiusTemperature = reponse.data.main.temp;
+
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = reponse.data.name;
+  descriptionElement.innerHTML = reponse.data.weather[0].description;
+  humidityElement.innerHTML = reponse.data.main.humidity;
   windElement.innerHTML = reponse.data.wind.speed;
   //weather icon - not working
   let iconElement = document.querySelector("#icon");
@@ -60,7 +63,32 @@ function submitSearch(event) {
   search(searchInputElement.value);
 }
 
-search("Stockholm");
+//faranheit-link
+function displayFaranheitTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  celsiusLink.classList.remove("active");
+  faranheitLink.classList.add("active");
+  let faranheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(faranheitTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  celsiusLink.classList.add("active");
+  faranheitLink.classList.remove("active");
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitSearch);
+
+let faranheitLink = document.querySelector("#faranheit-link");
+faranheitLink.addEventListener("click", displayFaranheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+search("Stockholm");
