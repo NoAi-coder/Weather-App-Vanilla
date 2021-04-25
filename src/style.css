@@ -28,6 +28,8 @@ ul {
   padding: 20px;
   margin: 15px;
   color: #fff;
+  text-transform: capitalize;
+
 }
 
 button {
@@ -61,4 +63,3 @@ position: relative;
   font-size: 14px;
   top: -10px;
 }
-

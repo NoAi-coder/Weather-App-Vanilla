@@ -21,22 +21,25 @@ function getCurrentTime() {
     minutes = `0${minutes}`;
   }
   let currentTime = document.querySelector(".current");
-  return (currentTime.innerHTML = `Now: ${day} at ${hour}:${minutes}`);
+  return (currentTime.innerHTML = `Now: ${day} ${hour}:${minutes}`);
 }
 
 getCurrentTime();
 
-//Search city function when clicking button
-function submitSearch(event) {
-  event.preventDefault();
-  let yourCity = document.querySelector("#search-input");
-  let city = document.querySelector("#city");
-  city.innerHTML = yourCity.value;
-
-  let apiKey = "27ddfc7325668fadfd863bab705e25e8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${yourCity.value}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(submitSearch, showTemp);
+//Dsiplay current weather info
+function showWeather(reponse) {
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(reponse.data.main.temp);
+  let cityElement = document.querySelector("h1");
+  cityElement.innerHTML = reponse.data.name;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = reponse.data.weather[0].description;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = reponse.data.main.humidity;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = reponse.data.wind.speed;
 }
 
-let form = document.querySelector("#search-city");
-form.addEventListener("submit", submitSearch);
+let apiKey = "27ddfc7325668fadfd863bab705e25e8";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=stockholm&units=metric&appid=${apiKey}`;
+axios.get(apiUrl).then(showWeather);
