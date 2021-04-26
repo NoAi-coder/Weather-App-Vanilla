@@ -27,20 +27,18 @@ function getCurrentTime() {
 getCurrentTime();
 
 //Dsiplay current weather info
-function showWeather(reponse) {
+function showWeather(response) {
   let tempElement = document.querySelector("#temp");
   let cityElement = document.querySelector("h1");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-
-  celsiusTemperature = reponse.data.main.temp;
-
+  celsiusTemperature = response.data.main.temp;
   tempElement.innerHTML = Math.round(celsiusTemperature);
-  cityElement.innerHTML = reponse.data.name;
-  descriptionElement.innerHTML = reponse.data.weather[0].description;
-  humidityElement.innerHTML = reponse.data.main.humidity;
-  windElement.innerHTML = reponse.data.wind.speed;
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = response.data.wind.speed;
   //weather icon - not working
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
